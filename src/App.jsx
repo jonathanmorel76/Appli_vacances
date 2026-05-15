@@ -94,7 +94,8 @@ export default function App() {
         const result = composeProposals({
           destinationId,
           styles: selectedStyles,
-          notes
+          notes,
+          date
         });
         if (!result || result.length === 0) {
           throw new Error("Aucune proposition générée");
@@ -351,13 +352,13 @@ export default function App() {
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Avec mes enfants, plutôt à pied, budget serré, j'évite les foules…"
+                placeholder="À deux, petit-déj local avant de démarrer, plutôt à pied, j'évite les foules…"
                 rows={3}
                 className="input-field rounded-xl px-4 py-3 text-sm w-full resize-none placeholder:opacity-50"
                 style={{ color: 'var(--ink)' }}
               />
               <p className="serif-italic text-xs mt-2" style={{ color: 'var(--ink-3)' }}>
-                Mots-clés détectés : <span className="opacity-70">enfants, budget, calme, marche, romantique, pluie, soleil…</span>
+                Mots-clés détectés : <span className="opacity-70">à deux, enfants, entre amis, petit-déj local, budget, luxe, calme, à pied, vin, pluie, soleil…</span>
               </p>
             </section>
 
